@@ -23,5 +23,3 @@ void hienchu(){
     digitalWrite(i+6,0);
   }
 }
-
-
