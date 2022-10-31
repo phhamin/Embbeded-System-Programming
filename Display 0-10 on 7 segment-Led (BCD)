@@ -1,0 +1,58 @@
+//Project 10: Display 0-10 on 7 segment-Led (BCD)
+int A = 3, B = 2, C = 1, D = 0;
+void setup(){
+  pinMode(A, OUTPUT); pinMode(B, OUTPUT);
+  pinMode(C, OUTPUT); pinMode(D, OUTPUT);
+}
+void loop(){
+  KHONG(); delay(1000);
+  MOT(); delay(1000);
+  HAI(); delay(1000);
+  BA(); delay(1000);
+  BON(); delay(1000);
+  NAM(); delay(1000);
+  SAU(); delay(1000);
+  BAY(); delay(1000);
+  TAM(); delay(1000);
+  CHIN(); delay(1000);
+}
+void KHONG(){
+  digitalWrite(A, LOW); digitalWrite(B, LOW);
+  digitalWrite(C, LOW); digitalWrite(D, LOW);
+}
+void MOT(){
+  digitalWrite(A, HIGH); digitalWrite(B, LOW);
+  digitalWrite(C, LOW); digitalWrite(D, LOW);
+}
+void HAI(){
+  digitalWrite(A, LOW); digitalWrite(B, HIGH);
+  digitalWrite(C, LOW); digitalWrite(D, LOW);
+}
+void BA(){
+  digitalWrite(A, HIGH); digitalWrite(B, HIGH);
+  digitalWrite(C, LOW); digitalWrite(D, LOW);
+}
+void BON(){
+  digitalWrite(A, LOW); digitalWrite(B, LOW);
+  digitalWrite(C, HIGH); digitalWrite(D, LOW);
+}
+void NAM(){
+  digitalWrite(A, HIGH); digitalWrite(B, LOW);
+  digitalWrite(C, HIGH); digitalWrite(D, LOW);
+}
+void SAU(){
+  digitalWrite(A, LOW); digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH); digitalWrite(D, LOW);
+}
+void BAY(){
+  digitalWrite(A, HIGH); digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH); digitalWrite(D, LOW);
+}
+void TAM(){
+  digitalWrite(A, LOW); digitalWrite(B, LOW);
+  digitalWrite(C, LOW); digitalWrite(D, HIGH);
+}
+void CHIN(){
+  digitalWrite(A, HIGH); digitalWrite(B, LOW);
+  digitalWrite(C, LOW); digitalWrite(D, HIGH);
+}
