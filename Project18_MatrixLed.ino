@@ -1,0 +1,27 @@
+#define ST_CP 2
+#define DS 3
+#define SH_CP 4
+//Khai bao chu H
+byte chu[][8]={
+  {0xFF,0x01,0x01,0xEF,0xEF,0x01,0x01,0xFF}, 
+};
+void setup(){
+  for(int i=2; i<=13; i++){
+    pinMode(i,OUTPUT);
+  }
+}
+void loop(){
+  hienchu();
+}
+void hienchu(){
+  for(int i=0;i<8;i++){
+    digitalWrite(ST_CP,0);
+    digitalWrite(i+6,1);
+    shiftOut(DS,SH_CP,MSBFIRST,chu[0][i]);
+    digitalWrite(ST_CP,1);
+    delay(1);
+    digitalWrite(i+6,0);
+  }
+}
+
+
