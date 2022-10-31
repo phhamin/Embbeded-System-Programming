@@ -1,0 +1,22 @@
+//Project 13: LCD Display
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+void setup(){
+  lcd.begin(16, 2);
+}
+void loop(){
+  lcd.clear();
+  lcd.setCursor(5, 0);
+  lcd.print("Phuong Ha");
+  lcd.setCursor(6, 1);
+  lcd.print("62CNTT2");
+  delay(1000);
+  for (int i = 0; i < 3; i++){
+    lcd.scrollDisplayLeft();
+    delay(300);
+  }
+  for (int j = 0; j < 6; j++){
+    lcd.scrollDisplayRight();
+    delay(300);
+  }
+}
