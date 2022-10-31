@@ -1,0 +1,16 @@
+//Project 4: TMP36
+int T = 0; //Biến T chứa giá trị nhiệt độ cảm biến đọc được
+int enviT = 0; //Biến enviT chứa giá trị nhiệt độ cần test
+void setup(){
+  pinMode(A0, INPUT);
+  pinMode(10, OUTPUT);
+}
+void loop(){
+  enviT = 37;
+  T = map(((analogRead(A0) - 20) * 3.04), 0, 1023, -40, 125);
+  if (T > enviT){
+    digitalWrite(10, HIGH);
+  }else{
+    digitalWrite(10, LOW);
+  }
+}
