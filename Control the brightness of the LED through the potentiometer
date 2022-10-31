@@ -1,4 +1,4 @@
-Project 6: Control the brightness of the LED through the potentiometer
+//Project 6: Control the brightness of the LED through the potentiometer
 int X = 0;
 void setup(){
   pinMode(A0, INPUT);
