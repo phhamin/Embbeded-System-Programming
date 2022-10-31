@@ -1,0 +1,16 @@
+//Project 11: Lights up 8 LEDs in ASCII code sequence, using IC 74HC595
+void setup(){
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+}
+void loop(){
+  for(int i=0; i<256; i++){
+     //Chot lai
+     digitalWrite(6, LOW);
+     //Shift data
+     shiftOut(5,7, LSBFIRST, i);
+     //Mo chot
+     digitalWrite(6, HIGH);
+     delay(1000);}
+}
