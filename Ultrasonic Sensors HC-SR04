@@ -1,0 +1,31 @@
+//Project 7: Ultrasonic Sensors HC-SR04
+#include <LiquidCrystal.h> //includes thư viện LiquidCrystal
+LiquidCrystal lcd(13, 12, 11, 10, 9, 8); //Tạo 1 đối tượng lcd
+Parameters: (rs, enable, d4, d5, d6, d7)
+const int trigPin = 6;
+const int echoPin = 5;
+long duration;
+int distanceCm, distanceInch;
+void setup(){
+  lcd.begin(16,2); //Khởi tạo màn hình và gán kích thước hiển thị
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+void loop(){
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distanceCm= duration*0.034/2;
+  distanceInch = duration*0.0133/2;
+  lcd.setCursor(6,0); //Đặt vị trí cho dòng text tiếp theo trên màn hình LCD 
+  lcd.print(distanceCm); //In giá trị khoảng cách
+  lcd.print(" cm");
+  delay(10);
+  lcd.setCursor(4,1);
+  lcd.print(distanceInch);
+  lcd.print(" inch");
+  delay(10);
+}
