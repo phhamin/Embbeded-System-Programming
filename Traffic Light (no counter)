@@ -1,0 +1,35 @@
+//Project 3: Traffic Light
+int YELLOW = 0;
+int GREEN = 1;
+int RED = 2;
+int DELAY_GREEN = 3000; //Thời gian đèn xanh chờ sáng
+int DELAY_YELLOW = 1000; //Thời gian đèn vàng chờ sáng
+int DELAY_RED = 3000; //Thời gian đèn đỏ chờ sáng
+void setup(){
+  pinMode(GREEN, OUTPUT);
+  pinMode(YELLOW, OUTPUT);
+  pinMode(RED, OUTPUT);
+}
+void loop(){
+  green_light();
+  delay(DELAY_GREEN);
+  yellow_light();
+  delay(DELAY_YELLOW);
+  red_light();
+  delay(DELAY_RED);
+}
+void green_light(){ //Đèn xanh bật
+  digitalWrite(GREEN, HIGH);
+  digitalWrite(YELLOW, LOW);
+  digitalWrite(RED, LOW);
+}
+void yellow_light(){ //Đèn vàng bật
+  digitalWrite(GREEN, LOW);
+  digitalWrite(YELLOW, HIGH);
+  digitalWrite(RED, LOW);
+}
+void red_light(){ //Đèn đỏ bật
+  digitalWrite(GREEN, LOW);
+  digitalWrite(YELLOW, LOW);
+  digitalWrite(RED, HIGH);
+}
