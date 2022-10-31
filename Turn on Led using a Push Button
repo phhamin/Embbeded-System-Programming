@@ -1,0 +1,15 @@
+//Project 2: Turn on Led using a Push Button
+int x = 0;
+void setup(){
+  pinMode(2, INPUT);
+  pinMode(13, OUTPUT);
+}
+void loop(){
+  x = digitalRead(2); // Đọc cổng số 2, cất vào biến x
+  if(x == HIGH){ //Kiểm tra nút có đang được nhấn hay không
+    digitalWrite(13, HIGH); //Bật Led
+  }else{
+    digitalWrite(13, LOW); //Tắt Led
+  }
+  delay(1000); //Đợi 1000ms
+}
